@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomor 3</title>
+<style>
+    #table-user {
+            width: 50%;
+            border: 1px solid black    
+            }
+    #table-user thead {
+            border: 1px solid black    
+            }
+    #table-user tr td {
+            border: 1px solid black    
+            }
+</style>
+</head>
+<body>
+    <form>
+        <h1>FORM USERS</h1>
+        <input type ="text" placeholder="username" class="input-users">
+        <input type ="email" placeholder="email" class="input-users">
+        
+        <label for ="pilih">role:</label>
+            <select id ="pilih" >
+                <option value ="admin">admin</option>
+                <option value ="user" selected>user</option>
+            </select>
+    </form>
+    <br>
+    <input type="button" value="ADD USER" id='tombol'>
+    <br>
+    <h1>USERS DATA</h1>
+    <table id="table-user">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- isi disini -->
+        </tbody>
+    </table>
+
+<script src= "users.js"></script>
+<script src= "input.js"></script>
+</body>
+</html>

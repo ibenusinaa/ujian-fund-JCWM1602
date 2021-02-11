@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOMOR 1</title>
+</head>
+<body>
+    <h1>PATTERN</h1>
+    <input type ="text" placeholder="masukan angka" id="input-angka">
+    <br><br>
+    <input type ="button" value="GANJIL" class="tombol">
+    <input type ="button" value="HURUF" class="tombol">
+    <h1 id="hasil"></h1>
+</body>
+<script>
+
+
+    function pattern(klik){
+        let angka = document.getElementById('input-angka').value
+
+        if(angka <= 4 && angka > 0){
+            if(klik == 'x'){
+                let n = 1
+                let a=''
+                for(let i = 0; i< angka; i++){ //
+                    for(let j = 0; j<=i; j++){
+                        a += (2*n)-1
+                        n ++
+                    }
+                    a += '<br>'
+                }
+                let print = document.getElementById('hasil').innerHTML = `RESULTS : <br> ${a}`
+
+
+            }else if(klik == '+'){
+                let b = ''
+                let huruf = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    
+                let coba = 0
+                for(let i = 1; i <= angka; i++){
+                    for(let j = 1; j <=i; j++){
+                        if(i==1){
+                            b += huruf[i]
+                            coba = i
+                        }else{
+                            b += huruf[(coba+2)]
+                            coba += 2
+                        }
+                    }
+                    b += '<br>'
+                }
+                let print = document.getElementById('hasil').innerHTML = `RESULTS : <br> ${b}`
+            }
+            
+        }else{
+            alert('Error')
+            
+        }
+        
+}
+    
+
+    let pencet = document.getElementsByClassName('tombol')
+  
+
+    pencet[0].addEventListener('click', function(){return pattern('x')})
+    pencet[1].addEventListener('click', function(){return pattern('+')})
+
+
+</script>
+</html>

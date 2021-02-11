@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DERET FIBONANCI</h1>
+    <p>Masukkan angka:</p>
+    <input type ='number' placeholder="masukan angka" id="angka">
+    <br>
+    <br>
+    <input type ="button" class ="tombol" value="SHOW">
+    <input type ="button" class ="tombol" value="GANJIL">
+    <input type ="button" class ="tombol" value="GENAP">
+    <h1 id='hasil'></h3>
+</body>
+
+<script>
+
+    function deret(klik){
+        let cek = document.getElementById('angka').value
+        console.log(cek)
+
+        if(klik == 'show'){
+            let result = []
+            for(let i=0; i<cek; i++ ){
+                if(i == 0 || i == 1){
+                    result.push(i)
+                }else{
+                    result.push((result[i-1])+(result[i-2]))
+                }
+            }
+            let print = document.getElementById('hasil').innerHTML= `${result}`
+
+        }else if(klik == 'ganjil'){
+            let result = []
+            for(let i=0; i<cek; i++ ){
+                if(i == 0 || i == 1){
+                    result.push(i)
+                }else{
+                    result.push((result[i-1])+(result[i-2]))
+                }
+            }
+            let hasil = []
+            let output = ''
+            let nilai = 0
+            for (let i =0; i<result.length; i++){
+                if(result[i] % 2 == 1){
+                    hasil.push(result[i])
+                }
+            }
+            for(let j=0; j<hasil.length; j++){
+                output += `${hasil[j]} + `
+                nilai += hasil[j]
+            }
+            let print = document.getElementById('hasil').innerHTML= `${output} = ${nilai}`
+
+        }else if(klik == 'genap'){
+
+            let result = []
+            for(let i=0; i<cek; i++ ){
+                if(i == 0 || i == 1){
+                    result.push(i)
+                }else{
+                    result.push((result[i-1])+(result[i-2]))
+                }
+            }
+            let hasil = []
+            let output = ''
+            let nilai = 0
+            for(let i =0; i<result.length; i++){
+                if(result[i] % 2 == 0){
+                    hasil.push(result[i])
+                }
+            }
+
+            for(let j=0; j<hasil.length; j++){
+                output += `${hasil[j]} + `
+                nilai += hasil[j]
+            }
+            let print = document.getElementById('hasil').innerHTML= `${output} = ${nilai}`
+        }
+    }
+
+    let tombol = document.getElementsByClassName('tombol')
+    tombol[0].addEventListener('click', function(){return deret('show')})
+    tombol[1].addEventListener('click', function(){return deret('ganjil')})
+    tombol[2].addEventListener('click', function(){return deret('genap')})
+
+
+
+</script>
+</html>
